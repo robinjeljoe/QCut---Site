@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <style>
+body {
+  margin:5% 5% 5% 5%;
+  background-color: #ed7845;
+    animation-duration: 1.6s;
+    animation-name: slidein;
+    animation-fill-mode: backwards;
+    animation-delay: 1s;
+    animation-timing-function: ease;
+    font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+@keyframes slidein {
+  from {
+    margin-left: 30%;
+    width: 60%;
+  }
+
+  to {
+    margin:5% 5% 5% 5%;
+    width: 90%;
+  }
+}
+
+.flex-parent-element {
+  display: flex;
+  width: 85%;
+}
+
+@keyframes oppa {
+  from{
+    opacity: 0%;
+  } 
+  to{
+    flex: 1;
+    opacity: 100%;
+    margin: 10px;
+  padding: 50px;
+  } 
+}
+
+.flex-child-element {
+  flex: 1;
+  margin: 10px;
+  padding: 50px;
+  animation-duration: 1.3s;
+  animation-fill-mode: backwards;
+    animation-delay: 1s;
+    animation-name: oppa;
+    animation-timing-function: ease-in-out;
+}
+
+.flex-child-element:first-child {
+  margin-right: 10px;
+}
+
+@media (max-width: 700px) { 
+  body {
+    font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+    margin:5% 5% 5% 5%;
+    background-color: #202124;
+      animation-duration: 1.6s;
+      animation-name: slidein;
+      animation-fill-mode:both;
+      animation-delay: 1s;
+      animation-timing-function: ease;
+  }
+  
+  @keyframes slidein {
+    from {
+      margin-left: 30%;
+      width: 100%;
+    }
+  
+    to {
+      margin:5% 5% 5% 10%;
+      width: 0%;
+    }
+  }
+  
+  .flex-parent-element {
+    display:flex;
+    width: 100%;
+  }
+  
+  .flex-child-element {
+    flex:3;
+    margin:   60px;
+    padding: 0px;
+    border: 0;
+  }
+  
+  .flex-child-element:first-child {
+    margin-right: 0px;
+  }
+}
+
+/*  Added styles for tables */
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: rgba(0, 0, 0, 0.05); /* Light grey for odd rows */
+}
+
+.table-bordered th,
+.table-bordered td {
+    border: 1px solid #dee2e6; /* Consistent borders */
+}
+
+.thead-dark {
+    background-color: #343a40; /* Dark header background */
+    color: white; /* White text in header */
+}
+
+.thead-light{
+    background-color: #6c757d;
+    color: white;
+}
+
+.btn-primary {
+    background-color: #007bff; /* Bootstrap primary color */
+    border-color: #007bff;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+    border-color: #0056b3;
+}
+
+/* Improved spacing */
+.container {
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1, h2, h3 {
+  font-family: "Poppins", sans-serif;
+}
+
+#bill-section {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    border: 1px solid #dee2e6;
+}
+
+.totals-section {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    text-align: right;
+}
+
+.totals-section p {
+    margin: 5px 0;
+    font-size: 16px;
+}
+
+.totals-section .grand-total {
+    font-weight: bold;
+    font-size: 18px;
+    color: #343a40;
+}
+  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+    <div class="container">
+        <h1 class="text-center">Order Summary</h1>
+
+        <!-- Order Summary Table -->
+        <table class="table table-striped table-bordered">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Sl No</th>
+                    <th>Order ID</th>
+                    <th>Name</th>
+                    <th>Total Amount</th>
+                    <th>Generate Bill</th>
+                </tr>
+            </thead>
+            <tbody id="order-summary-body">
+                <!-- Table rows will be added here by JavaScript -->
+            </tbody>
+        </table>
+
+        <!-- Bill Details Table (Hidden Initially) -->
+        <div id="bill-section" style="display: none;" class="mt-4">
+            <h2>Bill Details</h2>
+            <table class="table table-bordered">
+                <thead class="thead-light">
+                    <tr>
+                        <th>Sl No</th>
+                        <th>Name of Item</th>
+                        <th>Qty</th>
+                        <th>Amount</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody id="bill-body">
+                    <!-- Bill item rows will be added here -->
+                </tbody>
+            </table>
+            <div class="totals-section">
+                <p id="subtotal">Subtotal: ₹0.00</p>
+                <p id="tax">Tax (5%): ₹0.00</p>
+                <p class="grand-total" id="total-bill">Grand Total: ₹0.00</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Firebase Scripts -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.4/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.4/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.4/firebase-firestore.js"></script>
+    <script src="app1.js"></script>
+    <script>
+        // Load order data and populate summary table
+        auth.onAuthStateChanged((user) => {
+            if (user) {
+                loadOrderSummary(user);
+            } else {
+                console.log("No user is signed in.");
+                window.location = "index.html";
+            }
+        });
+
+        function loadOrderSummary(user) {
+            const userEmail = user.email.toString();
+            const username = userEmail.split('@')[0];
+            const orderSummaryBody = document.getElementById('order-summary-body');
+            var x=0
+            
+            db.collection('usernames').get().then((querySnapshot) => {
+                let orders = [];
+                
+                querySnapshot.forEach((doc) => {
+                    const data = doc.data();
+                    orders.push({
+                        sid: data.sid,
+                        name: data.name
+                    });
+                });
+                
+                // For each order, calculate the total amount
+                orders.forEach((order, index) => {
+                    db.collection(username).where('sid', '==', order.sid).get()
+                        .then((itemSnapshot) => {
+                            let totalAmount = 0;
+                            let orderItems = [];
+                            
+                            itemSnapshot.forEach((itemDoc) => {
+                                const itemData = itemDoc.data();
+                                totalAmount += (itemData.price * itemData.qty);
+                                orderItems.push(itemData);
+                            });
+                            
+                            // Only create and append row if total amount is not 0
+                            if (totalAmount > 0) {
+                                // Create table row
+                                x=x+1
+                                const row = document.createElement('tr');
+                                row.innerHTML = `
+                                    <td>${x}</td>
+                                    <td>${order.sid}</td>
+                                    <td>${order.name}</td>
+                                    <td>₹${totalAmount.toFixed(2)}</td>
+                                    <td><button class="btn btn-primary" onclick="generateBill('${order.sid}', '${order.name}', ${JSON.stringify(orderItems).replace(/"/g, '&quot;')})">Generate Bill</button></td>
+                                `;
+                                
+                                orderSummaryBody.appendChild(row);
+                            }
+                        });
+                });
+            });
+        }
+
+        function generateBill(orderId, customerName, orderItems) {
+            // Display the bill section
+            const billSection = document.getElementById('bill-section');
+            billSection.style.display = 'block';
+            
+            // Clear previous bill items
+            const billBody = document.getElementById('bill-body');
+            billBody.innerHTML = '';
+            
+            // Add bill title
+            document.querySelector('#bill-section h2').innerText = `Bill Details - ${customerName} (Order ID: ${orderId})`;
+            
+            // Calculate totals
+            let subtotal = 0;
+            
+            // Add bill items
+            orderItems.forEach((item, index) => {
+                const total = item.price * item.qty;
+                subtotal += total;
+                
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${index + 1}</td>
+                    <td>${item.name}</td>
+                    <td>${item.qty}</td>
+                    <td>₹${item.price.toFixed(2)}</td>
+                    <td>₹${total.toFixed(2)}</td>
+                `;
+                
+                billBody.appendChild(row);
+            });
+            
+            // Calculate tax and grand total
+            const tax = subtotal * 0.05;
+            const grandTotal = subtotal + tax;
+            
+            // Update totals
+            document.getElementById('subtotal').innerText = `Subtotal: ₹${subtotal.toFixed(2)}`;
+            document.getElementById('tax').innerText = `Tax (5%): ₹${tax.toFixed(2)}`;
+            document.getElementById('total-bill').innerText = `Grand Total: ₹${grandTotal.toFixed(2)}`;
+            
+            // Scroll to bill section
+            billSection.scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+var firebaseConfig = {
+  apiKey: "AIzaSyC3S50eHZY76Gr7mpA0gCs_I5JWYBmYs0Y",
+  authDomain: "qcut-60cec.firebaseapp.com",
+  projectId: "qcut-60cec",
+  storageBucket: "qcut-60cec.appspot.com",
+  messagingSenderId: "42169019245",
+  appId: "1:42169019245:web:fc7aa73d8b381dded00864"
+};
+
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+const db = firebase.firestore();
+const auth = firebase.auth();
+
+function getname(sid) {
+  return new Promise((resolve, reject) => {
+      db.collection("usernames").get().then((querySnapshot) => {
+          querySnapshot.forEach((doc) => {
+              const data = doc.data();
+              const sa = data.sid.toString();
+              const name = data.name.toString();
+              console.log(sid);
+              console.log(sa);
+              if (sa === sid) {
+                  console.log(name);
+                  resolve(name); // Resolve the promise with the name
+              }
+          });
+          // If the sid is not found, resolve with null
+          resolve(null);
+      }).catch((error) => {
+          // Reject the promise if there's an error
+          reject(error);
+      });
+  });
+}
+
+auth.onAuthStateChanged((user) => {
+  if (user) {
+      const userId = user.uid;
+      const userEmail = user.email.toString();
+      const userna = userEmail.split('@')[0];
+      const userName = user.displayName;
+      photo = user.photoURL;
+      
+      if (document.getElementById("abc")) {
+          document.getElementById("abc").innerHTML = userName;
+      }
+      
+      if (document.getElementById('us')) {
+          document.getElementById('us').src = photo;
+      }
+
+      const viewDataBtn = document.getElementById('viewDataBtn');
+      const dataContainer = document.getElementById('data-container');
+
+      if (viewDataBtn && dataContainer) {
+          function reloadDataAndCreateTables() {
+              db.collection(userna).get()
+                  .then((querySnapshot) => {
+                      dataContainer.innerHTML = ''; // Clear previous data
+      
+                      // Create an object to store data grouped by sid
+                      const groupedData = {};
+      
+                      querySnapshot.forEach((doc) => {
+                          const data = doc.data();
+                          const sid = data.sid;
+      
+                          // If the sid is not present in groupedData, initialize it as an empty array
+                          if (!groupedData[sid]) {
+                              groupedData[sid] = [];
+                          }
+      
+                          groupedData[sid].push(data);
+                      });
+      
+                      // Iterate through groupedData and create tables for each sid
+                      for (const sid in groupedData) {
+                          const items = groupedData[sid];
+                          const table = createTable(items, userEmail);
+                          const btn = document.createElement('button');
+                          btn.classList.add('custom-btn');
+                          const div = document.createElement('div');
+                          
+                          getname(sid).then((name) => {
+                              if (name !== null) {
+                                  console.log("Name found:", name);
+                                  div.innerHTML = `<h2>${name}</h2>`;
+                                  div.appendChild(table);
+                                  dataContainer.appendChild(div);
+                                  btn.innerHTML = "Delete";
+                                  dataContainer.appendChild(btn);
+                                  
+                                  // Add event listener to the button
+                                  btn.addEventListener("click", function onClick() {
+                                      del(sid, userna);
+                                      // Reload data and recreate tables after deleting documents
+                                      
+                                      // Remove the event listener after clicking once
+                                      btn.removeEventListener("click", onClick);
+
+                                      setTimeout(() => reloadDataAndCreateTables(), 400)
+                                      
+                                  });
+                              } else {
+                                  console.log("Name not found.");
+                              }
+                          }).catch((error) => {
+                              console.error("Error:", error);
+                          });
+                      }
+                  })
+                  .catch((error) => {
+                      console.error("Error getting documents: ", error);
+                  });
+          }
+  
+          viewDataBtn.addEventListener('click', () => {
+              // Call the function to load data and create tables
+              reloadDataAndCreateTables();
+          });
+      }
+  } else {
+      // No user is signed in
+      console.log("No user is signed in.");
+  }
+});
+
+function createTable(items, userEmail) {
+  const table = document.createElement('table');
+  const tbody = document.createElement('tbody');
+  table.classList.add('custom-table');
+  const f = document.createElement("thead");
+  const tr = document.createElement('tr');
+  tr.innerHTML = `<th>Name</th>
+  <th>Quantity</th>
+  <th>Price</th>
+  <th>Total</th>
+  <th>Status</th>`;
+  tbody.appendChild(tr);
+  
+  items.forEach((item) => {
+      const tr = document.createElement('tr');
+      tr.innerHTML = `
+          <td>${item.name || 'N/A'}</td>
+          <td>${item.qty || 'N/A'}</td>
+          <td>${item.price || 'N/A'}</td>
+          <td>${item.price * item.qty || 'N/A'}</td>
+          <td><input type="checkbox" ${item.end ? 'checked' : ''} onclick="updateEndValue('${item.docId}', this.checked, '${userEmail}')"></td>
+      `;
+      tbody.appendChild(tr);
+  });
+
+  table.appendChild(tbody);
+  return table;
+}
+
+let signOutButton = document.getElementById("signout");
+if (signOutButton) {
+  signOutButton.addEventListener("click", (e) => {
+      //Prevent Default Form Submission Behavior
+      e.preventDefault()
+      console.log("clicked")
+      
+      auth.signOut()
+      alert("Signed Out")
+      window.location = "index.html";
+  });
+}
+
+function updateEndValue(docId, isChecked, usd) {
+  db.collection(usd).doc(docId).update({
+      end: isChecked
+  })
+  .then(() => {
+      console.log('End value updated successfully!');
+  })
+  .catch((error) => {
+      console.error('Error updating end value:', error);
+  });
+}
+
+async function del(sid, userna) {
+  try {
+      // Get a reference to the collection
+      const collectionRef = firebase.firestore().collection(userna);
+  
+      // Get all documents in the collection
+      const snapshot = await collectionRef.get();
+  
+      // Iterate through each document and delete it
+      snapshot.forEach(async (doc) => {
+          const data = doc.data();
+          const sid1 = data.sid;
+          if(sid1 === sid){
+              await doc.ref.delete();
+          }
+      });
+  
+      console.log('All documents deleted successfully');
+  } catch (error) {
+      console.error('Error deleting documents:', error);
+      // Handle the error, e.g., show a message to the user
+  }
+}
+
+// Function to calculate total bill amount with tax
+function calculateBillWithTax(items) {
+  let total = 0;
+  items.forEach(item => {
+      total += (item.price * item.qty);
+  });
+  
+  const tax = total * 0.05; // 5% tax
+  const grandTotal = total + tax;
+  
+  return {
+      subtotal: total,
+      tax: tax,
+      grandTotal: grandTotal
+  };
+}

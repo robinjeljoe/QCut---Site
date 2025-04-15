@@ -1,0 +1,509 @@
+/* Modern QCut Stylesheet - Professional & Comfortable Design */
+
+/* Base styles and variables */
+:root {
+    --primary-color: #4e54c8;
+    --primary-light: #8f94fb;
+    --secondary-color: #ff6b6b;
+    --accent-color: #43cea2;
+    --dark-color: #2c3e50;
+    --light-color: #f9f9f9;
+    --text-color: #333333;
+    --text-light: #f8f9fa;
+    --text-muted: #6c757d;
+    --border-radius: 8px;
+    --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+
+
+  
+    
+  }
+  
+  body {
+    font-family: 'Poppins', sans-serif;
+    color: var(--text-color);
+    background: #FF6B00;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+  }
+  
+  .main-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+  
+  /* Header styles */
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 0;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  
+  .header .title {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .header h1 {
+    font-weight: 700;
+    margin: 0;
+    color: var(--primary-color);
+    font-size: 2.2rem;
+  }
+  
+  .header .image img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--primary-light);
+    box-shadow: var(--box-shadow);
+  }
+  
+  /* Buttons */
+  .btn {
+    display: inline-block;
+    font-weight: 500;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    user-select: none;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: var(--border-radius);
+    transition: var(--transition);
+    cursor: pointer;
+    box-shadow: var(--box-shadow);
+  }
+  
+  .btn-primary {
+    background: linear-gradient(to right, var(--primary-color), var(--primary-light));
+    color: var(--text-light);
+  }
+  
+  .btn-primary:hover {
+    background: linear-gradient(to right, var(--primary-light), var(--primary-color));
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  }
+  
+  .btn-success {
+    background: linear-gradient(to right, #43cea2, #185a9d);
+    color: var(--text-light);
+  }
+  
+  .btn-success:hover {
+    background: linear-gradient(to right, #185a9d, #43cea2);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  }
+  
+  .btn-danger {
+    background: linear-gradient(to right, #ff6b6b, #ee0979);
+    color: var(--text-light);
+  }
+  
+  .btn-danger:hover {
+    background: linear-gradient(to right, #ee0979, #ff6b6b);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  }
+  
+  .btn-block {
+    display: block;
+    width: 100%;
+  }
+  
+  /* Cards */
+  .card {
+    background: var(--light-color);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    overflow: hidden;
+    margin-bottom: 2rem;
+    transition: var(--transition);
+  }
+  
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card-header {
+    padding: 1.5rem;
+    background: var(--primary-color);
+    color: var(--text-light);
+  }
+  
+  .card-body {
+    padding: 1.5rem;
+  }
+  
+  /* Tables */
+  .table-container {
+    overflow-x: auto;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    margin-bottom: 2rem;
+  }
+  
+  .modern-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: var(--light-color);
+    overflow: hidden;
+  }
+  
+  .modern-table thead th {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    padding: 1rem;
+    text-align: left;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
+  }
+  
+  .modern-table tbody tr {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    transition: var(--transition);
+  }
+  
+  .modern-table tbody tr:hover {
+    background-color: rgba(0, 0, 0, 0.02);
+  }
+  
+  .modern-table tbody tr:nth-child(even) {
+    background-color: rgba(0, 0, 0, 0.02);
+  }
+  
+  .modern-table tbody tr:nth-child(even):hover {
+    background-color: rgba(0, 0, 0, 0.04);
+  }
+  
+  .modern-table td {
+    padding: 1rem;
+    vertical-align: middle;
+  }
+  
+  .modern-table td button {
+    margin: 0 0.25rem;
+  }
+  
+  /* Action buttons in tables */
+  .action-btn {
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    transition: var(--transition);
+  }
+  
+  .generate-bill-btn {
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: var(--transition);
+  }
+  
+  .generate-bill-btn:hover {
+    background-color: #2dbb8c;
+    transform: translateY(-2px);
+  }
+  
+  .delete-btn {
+    background-color: var(--secondary-color);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    margin-left: 0.5rem;
+    cursor: pointer;
+    transition: var(--transition);
+  }
+  
+  .delete-btn:hover {
+    background-color: #ff4949;
+    transform: translateY(-2px);
+  }
+  
+  /* Bill styling */
+  .bill-container {
+    background-color: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    padding: 2rem;
+    margin-bottom: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    display: none;
+  }
+  
+  .bill-header {
+    text-align: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 2px solid var(--primary-light);
+  }
+  
+  .bill-header img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+    border: 3px solid var(--primary-light);
+  }
+  
+  .bill-header h2 {
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+  }
+  
+  .bill-info {
+    display: flex;
+    justify-content: space-between;
+    margin: 1.5rem 0;
+    padding: 1rem;
+    background-color: rgba(0, 0, 0, 0.02);
+    border-radius: var(--border-radius);
+  }
+  
+  .bill-info-column {
+    flex: 1;
+  }
+  
+  .bill-info-column p {
+    margin: 0.5rem 0;
+  }
+  
+  .bill-info-column p strong {
+    font-weight: 600;
+    color: var(--dark-color);
+  }
+  
+  .bill-items {
+    margin-bottom: 2rem;
+  }
+  
+  .bill-items table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .bill-items table th {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 0.75rem;
+    text-align: left;
+  }
+  
+  .bill-items table td {
+    padding: 0.75rem;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .bill-total {
+    text-align: right;
+    padding: 1rem;
+    background-color: #f8f9fa;
+    border-radius: var(--border-radius);
+  }
+  
+  .bill-total p {
+    margin: 0.5rem 0;
+    font-size: 1.1rem;
+  }
+  
+  .bill-total p:last-child {
+    font-weight: 700;
+    font-size: 1.3rem;
+    color: var(--primary-color);
+    padding-top: 0.5rem;
+    margin-top: 0.5rem;
+    border-top: 2px dashed rgba(0, 0, 0, 0.1);
+  }
+  
+  .bill-actions {
+    text-align: center;
+    margin-top: 2rem;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+  }
+  
+  .print-btn {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 0.75rem 2rem;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .print-btn:hover {
+    background-color: var(--primary-light);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  .close-btn {
+    background-color: var(--secondary-color);
+    color: white;
+    border: none;
+    padding: 0.75rem 2rem;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .close-btn:hover {
+    background-color: #ff4949;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Status checkbox styling */
+  .status-checkbox {
+    position: relative;
+    width: 3rem;
+    height: 1.5rem;
+  }
+  
+  .status-checkbox input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .status-toggle {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: var(--transition);
+    border-radius: 1.5rem;
+  }
+  
+  .status-toggle:before {
+    position: absolute;
+    content: "";
+    height: 1rem;
+    width: 1rem;
+    left: 0.25rem;
+    bottom: 0.25rem;
+    background-color: white;
+    transition: var(--transition);
+    border-radius: 50%;
+  }
+  
+  input:checked + .status-toggle {
+    background-color: var(--accent-color);
+  }
+  
+  input:checked + .status-toggle:before {
+    transform: translateX(1.5rem);
+  }
+  
+  /* Print Styles */
+  @media print {
+    body * {
+      visibility: hidden;
+      background-color: white !important;
+    }
+    
+    .bill-container, .bill-container * {
+      visibility: visible;
+      color: black !important;
+    }
+    
+    .bill-header h2 {
+      color: #333 !important;
+    }
+    
+    .bill-container {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      box-shadow: none;
+      background-color: white !important;
+    }
+    
+    .bill-actions, .print-btn, .close-btn {
+      display: none !important;
+    }
+    
+    .bill-items table th {
+      background-color: #eee !important;
+      color: #333 !important;
+      border: 1px solid #ddd !important;
+    }
+    
+    .bill-items table td {
+      border: 1px solid #ddd !important;
+    }
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .main-container {
+      width: 95%;
+      padding: 1rem;
+    }
+    
+    .header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+    
+    .header .title {
+      width: 100%;
+      justify-content: space-between;
+    }
+    
+    .bill-info {
+      flex-direction: column;
+    }
+    
+    .bill-actions {
+      flex-direction: column;
+    }
+    
+    .modern-table {
+      font-size: 0.9rem;
+    }
+    
+    .modern-table th, .modern-table td {
+      padding: 0.75rem 0.5rem;
+    }
+    
+    .action-btn, .generate-bill-btn, .delete-btn {
+      padding: 0.4rem 0.8rem;
+      font-size: 0.8rem;
+    }
+  }

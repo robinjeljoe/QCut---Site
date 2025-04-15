@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QCut - Skip The Queue, Enjoy Your Food</title>
+    <link rel="stylesheet" href="land.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/smooth-scrollbar/8.8.1/smooth-scrollbar.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/smooth-scrollbar@8.6.3/dist/smooth-scrollbar.min.js"></script>
+</head>
+<body>
+    <div class="smooth-scroll">
+        <header>
+            <nav>
+                <div class="logo" style="font-size: 50px;color: blanchedalmond;">
+                    <p style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font: size 8    0px ; font-weight: 900;">QCut</p>
+                </div>
+                <div class="nav-links">
+                    <a href="#features">Features</a>
+                    <a href="#how-it-works">How It Works</a>
+                    <a href="#restaurants">Partner Restaurants</a>
+                    <a href="#download">Download</a>
+                    <a href="#contact">Contact</a>
+                    <a class="login-btn" id="shopLoginBtn" href="/public/index.html" style="color:orange">Shop Login</a>
+                </div>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+            
+            <div class="hero">
+                <div class="hero-content">
+                    <h1>Skip The Queue,<br>Enjoy Your Food</h1>
+                    <p>Pre-book your meals and say goodbye to waiting times with QCut - the smart way to order food ahead of time.</p>
+                    <div class="cta-buttons">
+                        <a href="https://drive.google.com/file/d/1EBHjSOdHL0rWJyXZ8ung6p92yGZw8Y8J/view?usp=sharing" class="download-btn android">
+                            <i class="fab fa-google-play"></i>
+                            <span>
+                                <small>GET IT ON</small>
+                                <strong>Google Play</strong>
+                            </span>
+                        </a>
+                        <a href="#features" class="learn-more">Learn More</a>
+                    </div>
+                </div>
+                <div class="app-screenshots1">
+                    <div class="phone-frame">
+                        <img src="/public/assets/IMG-20250228-WA0061.jpg" alt="QCut App Screenshot" class="app-screenshot">
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <section id="features" class="features">
+            <h2>Why Choose QCut?</h2>
+            <div class="features-container">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3>Save Time</h3>
+                    <p>Pre-book your meals and skip the queue. Your food will be ready for pickup when you arrive.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <h3>Wide Selection</h3>
+                    <p>Browse through hundreds of restaurants and cafes in your area to satisfy any craving.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>Easy To Use</h3>
+                    <p>Our intuitive interface makes it simple to browse menus, place orders, and pay securely.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-tag"></i>
+                    </div>
+                    <h3>Exclusive Deals</h3>
+                    <p>Get access to special promotions and discounts only available through the QCut app.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="how-it-works" class="how-it-works">
+            <h2>How It Works</h2>
+            <div class="steps-container">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Choose Restaurant</h3>
+                        <p>Browse through our extensive list of partner restaurants and cafes in your area.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Place Your Order</h3>
+                        <p>Select your meals, customize as needed, and choose your pickup time.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Pay Securely</h3>
+                        <p>Complete your payment through our secure payment gateway.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>Pick Up & Enjoy</h3>
+                        <p>Skip the line, pick up your order at the designated time, and enjoy!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="app-preview" class="app-preview">
+            <div class="app-preview-content">
+                <h2>Designed For Speed & Convenience</h2>
+                <p>QCut's intuitive interface allows you to browse, order, and pay with just a few taps. Never wait in line again!</p>
+                <ul class="app-features-list">
+                    <li><i class="fas fa-check-circle"></i> Real-time order status updates</li>
+                    <li><i class="fas fa-check-circle"></i> Save favorite orders for quick reordering</li>
+                    <li><i class="fas fa-check-circle"></i> Schedule orders days in advance</li>
+                    <li><i class="fas fa-check-circle"></i> Multiple payment options</li>
+                    <li><i class="fas fa-check-circle"></i> Rate your experience</li>
+                </ul>
+            </div>
+            <div class="app-screenshots">
+                <div class="phone-frame">
+                    <img src="/public/assets/IMG-20250228-WA0059.jpg" alt="QCut App Screenshot" class="app-screenshot">
+                </div>
+            </div>
+        </section>
+
+        <section id="restaurants" class="restaurants">
+            <h2>Our Partner Restaurants</h2>
+            <p>Join hundreds of satisfied restaurant partners who've increased their efficiency and customer satisfaction with QCut</p>
+            <div class="restaurant-logos">
+                <div class="logo-container"><img src="/public/assets/1.png" alt="Restaurant Logo"></div>
+                <div class="logo-container"><img src="/public/assets/2.png" alt="Restaurant Logo"></div>
+                <div class="logo-container"><img src="/public/assets/3.png" alt="Restaurant Logo"></div>
+                <div class="logo-container"><img src="/public/assets/4.png" alt="Restaurant Logo"></div>
+            </div>
+            <div class="restaurant-cta">
+                <h3>Own a Restaurant?</h3>
+                <p>Partner with QCut to streamline your operations, reduce waiting times, and increase customer satisfaction.</p>
+                <a href="/reg/index.html" class="secondary-btn">Become a Partner</a>
+            </div>
+        </section>
+
+       <!--  <section id="testimonials" class="testimonials">
+            <h2>What Our Users Say</h2>
+            <div class="testimonial-container">
+                <div class="testimonial">
+                    <div class="quote">"QCut has completely changed my lunch breaks. I can order ahead, skip the queue, and have more time to actually enjoy my meal!"</div>
+                    <div class="author">
+                        <img src="/api/placeholder/60/60" alt="User Avatar" class="avatar">
+                        <div>
+                            <h4>Sarah Johnson</h4>
+                            <p>Marketing Professional</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <div class="quote">"As a busy student, QCut saves me valuable time between classes. The interface is super intuitive and the service is reliable."</div>
+                    <div class="author">
+                        <img src="/api/placeholder/60/60" alt="User Avatar" class="avatar">
+                        <div>
+                            <h4>Michael Chen</h4>
+                            <p>University Student</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <div class="quote">"I used to avoid certain places during lunch rush, but with QCut I can enjoy my favorite restaurants without the hassle of waiting in line."</div>
+                    <div class="author">
+                        <img src="/api/placeholder/60/60" alt="User Avatar" class="avatar">
+                        <div>
+                            <h4>Emma Roberts</h4>
+                            <p>Software Developer</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section> -->
+
+        <section id="download" class="download">
+            <div class="download-content">
+                <h2>Download QCut Today</h2>
+                <p>Join thousands of satisfied users who've made waiting in line a thing of the past.</p>
+                <div class="download-buttons">
+                    <a href="https://drive.google.com/file/d/1EBHjSOdHL0rWJyXZ8ung6p92yGZw8Y8J/view?usp=sharing" class="download-btn android">
+                        <i class="fab fa-google-play"></i>
+                        <span>
+                            <small>GET IT ON</small>
+                            <strong>Google Play</strong>
+                        </span>
+                    </a>
+                </div>
+            </div>
+            <div class="download-image">
+                <img src="/public/assets/icon.jpeg" alt="QCut App on Mobile Phone">
+            </div>
+        </section>
+
+        <section id="contact" class="contact">
+            <h2>Get In Touch</h2>
+            <p>Have questions or feedback? We'd love to hear from you!</p>
+            <div class="contact-container">
+                <form id="contactForm" class="contact-form">
+                    <input type="text" placeholder="Name" required>
+                    <input type="email" placeholder="Email" required>
+                    <select>
+                        <option value="" disabled selected>Select an option</option>
+                        <option value="general">General Inquiry</option>
+                        <option value="support">Customer Support</option>
+                        <option value="partnership">Restaurant Partnership</option>
+                        <option value="feedback">App Feedback</option>
+                    </select>
+                    <textarea placeholder="Your Message" rows="5" required></textarea>
+                    <button type="submit" class="primary-btn">Send Message</button>
+                </form>
+                <div class="contact-info">
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <p>support@qcutapp.com</p>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-phone-alt"></i>
+                        <p>+1 (800) 123-4567</p>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <p>123 Tech Street, App City, AC 12345</p>
+                    </div>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="/public/assets/icon.jpeg" alt="QCut Logo" style="height: 100px; width: 100px; mix-blend-mode:color;">
+                    
+                </div>
+                <div class="footer-links">
+                    <div class="link-column">
+                        <h4>Company</h4>
+                        <a href="#">About Us</a>
+                        <a href="#">Careers</a>
+                        <a href="#">Blog</a>
+                        <a href="#">Press</a>
+                    </div>
+                    <div class="link-column">
+                        <h4>Legal</h4>
+                        <a href="#">Terms of Service</a>
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Cookie Policy</a>
+                    </div>
+                    <div class="link-column">
+                        <h4>Support</h4>
+                        <a href="#">Help Center</a>
+                        <a href="#">Contact Us</a>
+                        <a href="#">FAQs</a>
+                    </div>
+                    <div class="link-column">
+                        <h4>Partners</h4>
+                        <a href="/reg/index.html">Become a Partner</a>
+                        <a href="/public/index.html">Partner Login</a>
+                        <a href="#">Partner Resources</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 QCut. All rights reserved.</p>
+                <div class="app-store-links">
+                    <a href="https://drive.google.com/file/d/1EBHjSOdHL0rWJyXZ8ung6p92yGZw8Y8J/view?usp=sharing" class="download-btn android-small">
+                        <i class="fab fa-google-play"></i>
+                        <span>Google Play</span>
+                    </a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Shop Login Modal -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Restaurant Partner Login</h2>
+            <form id="loginForm">
+                <input type="email" placeholder="Email" required>
+                <input type="password" placeholder="Password" required>
+                <div class="form-options">
+                    <label>
+                        <input type="checkbox"> Remember me
+                    </label>
+                    <a href="#" class="forgot-password">Forgot Password?</a>
+                </div>
+                <button type="submit" class="primary-btn">Login</button>
+            </form>
+            <div class="register-link">
+                <p>Not a partner yet? <a href="#">Apply to join</a></p>
+            </div>
+        </div>
+    </div>
+    
+    
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Font -->
+  <link rel="shortcut icon" type="image/x-icon" href="assets/icon.jpeg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- CSS -->
+  <link rel="stylesheet" href="styles.css">
+  
+  <title>QCut - Order Management</title>
+</head>
+<body>
+  <div class="main-container">
+    <!-- Header with user info -->
+    <div class="header" id="header">
+      <div class="title">
+        <h1 id="abc">QCut</h1>
+        <div class="image">
+          <img id="us" alt="User Profile">
+        </div>
+      </div>
+    </div>
+    
+    <!-- Main action button -->
+    <button id="viewDataBtn" class="btn btn-primary btn-block" onclick="hiderman()">View Orders</button>
+    
+    <!-- Summary container for the orders list -->
+    <div id="summary-container" class="card">
+      <!-- This will be populated by JavaScript -->
+    </div>
+    
+    <!-- Original data container (kept for compatibility) -->
+    <div id="data-container" style="display: none;">
+      <table id="data-table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th>Total</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody id="data-body"></tbody>
+      </table>
+    </div>
+    
+    <!-- Bill container -->
+    <div id="bill-container" class="bill-container">
+      <div class="bill-header">
+        <img id="bill-logo" alt="Shop Logo">
+        <h2 id="bill-shop-name">Shop Name</h2>
+      </div>
+      
+      <div class="bill-info">
+        <div class="bill-info-column">
+          <p><strong>Customer:</strong> <span id="bill-customer-name"></span></p>
+          <p><strong>Order ID:</strong> <span id="bill-order-id"></span></p>
+        </div>
+        <div class="bill-info-column">
+          <p><strong>Date:</strong> <span id="bill-date"></span></p>
+          <p><strong>Invoice #:</strong> QCT-<span id="bill-invoice-number"></span></p>
+        </div>
+      </div>
+      
+      <div class="bill-items">
+        <table class="modern-table">
+          <thead>
+            <tr>
+              <th>Sl No</th>
+              <th>Name of Item</th>
+              <th>Qty</th>
+              <th>Price</th>
+              <th>Total</th>
+            </tr>
+          </thead>
+          <tbody id="bill-items-body"></tbody>
+        </table>
+      </div>
+      
+      <div class="bill-total">
+        <p>Subtotal: <span id="bill-subtotal"></span></p>
+        <p>Tax (5%): <span id="bill-tax"></span></p>
+        <p>Total Amount: <span id="bill-total"></span></p>
+      </div>
+      
+      <div class="bill-actions">
+        <button class="print-btn" onclick="printBill()">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+            <path d="M5 1a2 2 0 0 0-2 2v1h10V3a2 2 0 0 0-2-2H5zm6 8H5a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-3a1 1 0 0 0-1-1z"/>
+            <path d="M0 7a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2h-1v-2a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v2H2a2 2 0 0 1-2-2V7zm2.5 1a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1z"/>
+          </svg>
+          Print Bill
+        </button>
+        <button class="close-btn" onclick="closeBill()">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+            <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+          </svg>
+          Close
+        </button>
+      </div>
+    </div>
+    
+    <!-- Sign out button -->
+    <button type="submit" id="signout" class="btn btn-danger btn-block">Sign Out</button>
+  </div>
+
+  <!-- JavaScript -->
+  <script src="https://www.gstatic.com/firebasejs/8.2.4/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.2.4/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.2.4/firebase-firestore.js"></script>
+  <script src="app1.js"></script>
+</body>
+</html>
